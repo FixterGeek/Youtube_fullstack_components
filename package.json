@@ -10,6 +10,7 @@
     "tailwind:prod": "npx tailwindcss -m -i tailwind.css -o app/styles/style.css"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.15",
     "@netlify/functions": "^1.4.0",
     "@remix-run/css-bundle": "^1.18.0",
     "@remix-run/netlify": "^1.18.0",
@@ -18,7 +19,9 @@
     "cross-env": "^7.0.3",
     "isbot": "^3.6.8",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
+    "tailwind-merge": "^1.13.2"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.18.0",

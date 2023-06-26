@@ -16,7 +16,7 @@ export const meta: V2_MetaFunction = () => {
 
 export const action: ActionFunction = async ({ request }) => {
   const session = await getSession(request.headers.get("Cookie"));
-  session.set("userId", String(Date.now()));
+  session.set("userId", "fixtergeek@gmail.com"); // update for DB info
   throw redirect("/dash", {
     headers: { "Set-Cookie": await commitSession(session) },
   });
@@ -32,7 +32,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 export default function Index() {
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen gap-4">
+    <div className="flex flex-col justify-center items-center gap-4 min-h-[40vh]">
       <h2 className="text-4xl font-bold">😎 ¡Vamos a comenzar!</h2>
       <Form method="post">
         <button

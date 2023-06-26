@@ -32,7 +32,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 export default function Dash() {
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen gap-4">
+    <div className="flex flex-col justify-center items-center min-h-[40vh] gap-4">
       <h2 className="text-4xl font-bold">😎 ¡Este es tu dashboard!</h2>
       <Form method="post">
         <button
