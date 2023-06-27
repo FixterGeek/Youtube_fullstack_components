@@ -17,7 +17,7 @@ export default function Dropdown({
         <Menu.Button>{cta}</Menu.Button>
         <Menu.Items
           className={twMerge(
-            "shadow-md bg-slate-100 absolute top-8 right-0 rounded-md py-3 px-4 grid min-w-[180px] ",
+            "shadow-md bg-slate-100 absolute top-12 right-0 rounded-md py-3 px-4 grid min-w-[180px] ",
             className
           )}
         >

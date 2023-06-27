@@ -22,18 +22,14 @@ const AccountManager = () => {
     }
   }, [fetcher]);
 
-  // checking for fetcher
+  // Fetcher observer
   useEffect(() => {
     if (fetcher.data && fetcher.data.ok) {
-      setUser(fetcher.data.user);
-      return;
-    }
-    if (fetcher.data && fetcher.data.user) {
       setUser(fetcher.data.user);
     } else {
       setUser(null);
     }
-  }, [fetcher]);
+  }, [fetcher, navigate]);
 
   // run once, on the beginning
   useEffect(() => {
@@ -64,7 +60,7 @@ const AccountManager = () => {
       { method: "post", action: "/api/auth" }
     );
   };
-  console.log("Return?", user);
+
   return (
     <>
       {!user && <button onClick={handleLogin}>Entrar</button>}

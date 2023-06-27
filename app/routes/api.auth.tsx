@@ -1,5 +1,4 @@
 import {
-  redirect,
   type ActionFunction,
   type LoaderFunction,
   json,
@@ -15,7 +14,7 @@ export const action: ActionFunction = async ({ request }) => {
   if (intent === "login") {
     session.set("userId", "fixtergeek@gmail.com"); // change for DB info
     return json(
-      { user: { email: "fixtergeek@gmail.com" } },
+      { user: { email: "fixtergeek@gmail.com" }, ok: true },
       {
         headers: {
           "Set-Cookie": await commitSession(session),
@@ -47,10 +46,8 @@ type LoaderData = {
 export const loader: LoaderFunction = async ({ request }) => {
   const session = await getSession(request.headers.get("Cookie"));
   if (session.has("userId")) {
-    console.log("Called, exists");
     const email = session.get("userId");
     return { ok: true, user: { email } } as LoaderData;
   }
-  console.log("Called, not");
   return { ok: false, error: "No active session" };
 };
