@@ -4,12 +4,12 @@ import AccountManager from "./AccountManager";
 
 export default function NavBar() {
   return (
-    <nav className="bg-gradient-to-r from-indigo-500 to-violet-500">
-      <div className="max-w-3xl flex items-center gap-4 py-4 px-4 mx-auto text-white text-sm">
+    <nav className="bg-[#fffcf7] border border-gray-200 shadow">
+      <div className="max-w-3xl flex items-center gap-4 py-4 px-4 mx-auto text-sm text-black">
         <Link to="/">
           <img
-            className="w-[140px]"
-            src="https://www.logodesign.net/images/home-logos/brand-amazon-logo.png"
+            className="w-[80px]"
+            src="https://i.pinimg.com/originals/aa/d6/77/aad67746323d7a7fe963a0be2e912a3a.png"
             alt="logo"
           />
         </Link>
