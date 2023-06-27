@@ -17,7 +17,6 @@ const AccountManager = () => {
   const getUser = useCallback(async () => {
     fetcher.load("/api/auth");
     if (fetcher.data?.ok) {
-      console.log("OK?", fetcher.data);
       setUser(fetcher.data.user);
     }
   }, [fetcher]);
@@ -29,7 +28,7 @@ const AccountManager = () => {
     } else {
       setUser(null);
     }
-  }, [fetcher, navigate]);
+  }, [fetcher]);
 
   // run once, on the beginning
   useEffect(() => {
