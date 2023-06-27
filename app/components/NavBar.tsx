@@ -1,6 +1,6 @@
 import { Link } from "@remix-run/react";
 import { TbBell } from "react-icons/tb";
-import AccountManager from "./AccountManager";
+// import AccountManager from "./AccountManager";
 
 export default function NavBar() {
   return (
@@ -16,7 +16,7 @@ export default function NavBar() {
         <span className="text-black bg-white p-1 rounded-full text-lg ml-auto">
           <TbBell />
         </span>
-        <AccountManager />
+        {/* <AccountManager /> */}
       </div>
     </nav>
   );

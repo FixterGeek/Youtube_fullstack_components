@@ -1,53 +1,53 @@
 import {
   type ActionFunction,
   type LoaderFunction,
-  json,
+  // json,
 } from "@remix-run/node";
-import type { UserType } from "~/components/AccountManager";
-import { commitSession, getSession } from "~/sessions";
+// import type { UserType } from "~/components/AccountManager";
+// import { commitSession, getSession } from "~/sessions";
 
 export const action: ActionFunction = async ({ request }) => {
-  const formData = await request.formData();
-  const intent = formData.get("intent");
-  const session = await getSession(request.headers.get("Cookie"));
+  // const formData = await request.formData();
+  // const intent = formData.get("intent");
+  // const session = await getSession(request.headers.get("Cookie"));
 
-  if (intent === "login") {
-    session.set("userId", "fixtergeek@gmail.com"); // change for DB info
-    return json(
-      { user: { email: "fixtergeek@gmail.com" }, ok: true },
-      {
-        headers: {
-          "Set-Cookie": await commitSession(session),
-        },
-      }
-    );
-  }
+  // if (intent === "login") {
+  //   session.set("userId", "fixtergeek@gmail.com"); // change for DB info
+  //   return json(
+  //     { user: { email: "fixtergeek@gmail.com" }, ok: true },
+  //     {
+  //       headers: {
+  //         "Set-Cookie": await commitSession(session),
+  //       },
+  //     }
+  //   );
+  // }
 
-  if (intent === "signout") {
-    session.unset("userId");
-    return json(
-      { user: null },
-      {
-        headers: {
-          "Set-Cookie": await commitSession(session),
-        },
-      }
-    );
-  }
+  // if (intent === "signout") {
+  //   session.unset("userId");
+  //   return json(
+  //     { user: null },
+  //     {
+  //       headers: {
+  //         "Set-Cookie": await commitSession(session),
+  //       },
+  //     }
+  //   );
+  // }
 
   return null;
 };
 
-type LoaderData = {
-  ok: boolean;
-  error?: string;
-  user?: UserType;
-};
+// type LoaderData = {
+//   ok: boolean;
+//   error?: string;
+//   user?: UserType;
+// };
 export const loader: LoaderFunction = async ({ request }) => {
-  const session = await getSession(request.headers.get("Cookie"));
-  if (session.has("userId")) {
-    const email = session.get("userId");
-    return { ok: true, user: { email } } as LoaderData;
-  }
+  // const session = await getSession(request.headers.get("Cookie"));
+  // if (session.has("userId")) {
+  //   const email = session.get("userId");
+  //   return { ok: true, user: { email } } as LoaderData;
+  // }
   return { ok: false, error: "No active session" };
 };
